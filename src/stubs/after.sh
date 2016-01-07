@@ -6,6 +6,12 @@
 
 echo "\n================================"
 echo "lara-vedst specific provisioning"
+
+echo "\n================================"
+echo "lara-vedst: Ubuntu System Update..."
+apt-get update
+apt-get upgrade -y
+
 echo "lara-vedst: cloning git repo..."
 cd /home/vagrant/Code
 git clone https://github.com/4D44H/lara-vedst.git
@@ -31,6 +37,17 @@ echo "lara-vedst: seeding..."
 php artisan migrate --seed
 
 service nginx restart
+
+#echo "\n================================"
+#echo "lara-vedst: OpenLDAP setup..."
+#apt-get install -y slapd ldap-utils
+#dpkg-reconfigure slapd
+#apt-get install phpldapadmin
+#echo "\n================================"
+#echo "lara-vedst: ApacheDS setup..."
+#wget http://mirror.yannic-bonenberger.com/apache//directory/apacheds/dist/2.0.0-M21/apacheds-2.0.0-M21-amd64.deb
+#dpkg -i apacheds-*-amd64.deb
+
 echo "\n================================"
 echo "lara-vedst: finished"
 echo "================================"
