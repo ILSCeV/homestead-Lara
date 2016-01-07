@@ -14,6 +14,7 @@ apt-get upgrade -y
 
 echo "lara-vedst: cloning git repo..."
 cd /home/vagrant/Code
+rm -r lara-vedst
 git clone https://github.com/4D44H/lara-vedst.git
 if [ ! -d /home/vagrant/Code/lara-vedst/public ]; then
 	echo "error while executing 'git clone https://github.com/4D44H/lara-vedst.git'";
