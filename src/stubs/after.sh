@@ -48,7 +48,13 @@ service nginx restart
 #echo "lara-vedst: ApacheDS setup..."
 #wget http://mirror.yannic-bonenberger.com/apache//directory/apacheds/dist/2.0.0-M21/apacheds-2.0.0-M21-amd64.deb
 #dpkg -i apacheds-*-amd64.deb
+#echo "\n================================"
+#echo "lara-vedst: phpmyadmin..."
+#add-apt-repository -y ppa:nijel/phpmyadmin
+#apt-get update
+#apt-get install phpmyadmin
 
 echo "\n================================"
 echo "lara-vedst: finished"
+echo "enjoy: http://localhost:8000"
 echo "================================"
