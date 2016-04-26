@@ -15,28 +15,35 @@ apt-get upgrade -y
 echo "lara-vedst: cloning git repo..."
 cd /home/vagrant/Code
 rm -r lara-vedst
-git clone https://github.com/4D44H/lara-vedst.git
+git clone -b devel-poll https://github.com/tuiSSE/lara-vedst.git
 if [ ! -d /home/vagrant/Code/lara-vedst/public ]; then
-	echo "error while executing 'git clone https://github.com/4D44H/lara-vedst.git'";
+	echo "error while executing 'git clone ...'";
 	exit 1
 fi
 cd /home/vagrant/Code/lara-vedst
 
 echo "\n================================"
 echo "lara-vedst: database settings..."
+cp .env.example .env
 sed -i -e 's/DB_HOST=.*/DB_HOST=localhost/' .env
 sed -i -e 's/DB_DATABASE=.*/DB_DATABASE=lara/' .env
 sed -i -e 's/DB_USERNAME=.*/DB_USERNAME=root/' .env
 sed -i -e 's/DB_PASSWORD=.*/DB_PASSWORD=secret/' .env
 
 echo "\n================================"
-echo "lara-vedst: composer update..."
+echo "lara-vedst: composer..."
+composer install
 composer update
 
 echo "\n================================"
 echo "lara-vedst: seeding..."
 php artisan migrate --seed
+echo "\n================================"
+echo "lara-vedst: generate random cipher key..."
+php artisan key:generate
 
+echo "\n================================"
+echo "lara-vedst: webserver restart..."
 service nginx restart
 
 #echo "\n================================"
