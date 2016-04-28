@@ -33,7 +33,7 @@ sed -i -e 's/DB_PASSWORD=.*/DB_PASSWORD=secret/' .env
 echo "\n================================"
 echo "lara-vedst: composer..."
 composer install
-composer update
+#composer update
 
 echo "\n================================"
 echo "lara-vedst: seeding..."
