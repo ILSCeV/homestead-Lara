@@ -7,10 +7,10 @@
 echo "\n================================"
 echo "lara-vedst specific provisioning"
 
-echo "\n================================"
-echo "lara-vedst: Ubuntu System Update..."
-apt-get update
-apt-get upgrade -y
+#echo "\n================================"
+#echo "lara-vedst: Ubuntu System Update..."
+#apt-get update
+#apt-get upgrade -y
 
 echo "lara-vedst: cloning git repo..."
 cd /home/vagrant/Code
@@ -20,7 +20,7 @@ if [ ! -d /home/vagrant/Code/lara-vedst/public ]; then
 	echo "error while executing 'git clone ...'";
 	exit 1
 fi
-cd /home/vagrant/Code/lara-vedst
+cd lara-vedst
 
 echo "\n================================"
 echo "lara-vedst: database settings..."
