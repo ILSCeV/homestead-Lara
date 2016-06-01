@@ -18,7 +18,6 @@ powershell -Command "(gc %homesteadRoot%\after.sh) -replace 'REPOSITORY_URL_HERE
 powershell -Command "(gc %homesteadRoot%\after.sh) -replace 'BRANCH_NAME_HERE', '%BRANCH%' | Out-File %homesteadRoot%\after.sh"
 
 set homesteadRoot=
-echo Homestead initialized!
 
 SET /P EXECUTE=Do you want to execute 'vagrant up' now? [y/N] 
 IF /I "%EXECUTE%" == "Y" vagrant up
