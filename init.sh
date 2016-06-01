@@ -9,3 +9,5 @@ cp -i src/stubs/after.sh "$homesteadRoot/after.sh"
 cp -i src/stubs/aliases "$homesteadRoot/aliases"
 
 echo "Homestead initialized!"
+
+echo "AAAAH: Further steps found in init.bat needed! You may create a pull request ;)"

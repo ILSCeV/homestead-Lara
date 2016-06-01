@@ -15,7 +15,7 @@ echo "lara-vedst specific provisioning"
 echo "lara-vedst: cloning git repo..."
 cd /home/vagrant/Code
 rm -r lara-vedst
-git clone -b devel-poll https://github.com/tuiSSE/lara-vedst.git
+git clone -b BRANCH_NAME_HERE REPOSITORY_URL_HERE
 if [ ! -d /home/vagrant/Code/lara-vedst/public ]; then
 	echo "error while executing 'git clone ...'";
 	exit 1
