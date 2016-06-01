@@ -30,7 +30,7 @@ block="server {
     client_max_body_size 100m;
 
     # DEV
-    location ~ ^/(app_dev|config)\.php(/|\$) {
+    location ~ ^/(app_dev|app_test|config)\.php(/|\$) {
         fastcgi_split_path_info ^(.+\.php)(/.+)\$;
         fastcgi_pass unix:/var/run/php/php7.0-fpm.sock;
         include fastcgi_params;
@@ -65,5 +65,3 @@ block="server {
 
 echo "$block" > "/etc/nginx/sites-available/$1"
 ln -fs "/etc/nginx/sites-available/$1" "/etc/nginx/sites-enabled/$1"
-service nginx restart
-service php7.0-fpm restart

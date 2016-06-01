@@ -1,3 +1,6 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
 require 'json'
 require 'yaml'
 
@@ -17,12 +20,18 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     end
 
     if File.exists? homesteadYamlPath then
-        Homestead.configure(config, YAML::load(File.read(homesteadYamlPath)))
+        settings = YAML::load(File.read(homesteadYamlPath))
     elsif File.exists? homesteadJsonPath then
-        Homestead.configure(config, JSON.parse(File.read(homesteadJsonPath)))
+        settings = JSON.parse(File.read(homesteadJsonPath))
     end
 
+    Homestead.configure(config, settings)
+
     if File.exists? afterScriptPath then
-        config.vm.provision "shell", path: afterScriptPath
+        config.vm.provision "shell", path: afterScriptPath, privileged: false
+    end
+
+    if defined? VagrantPlugins::HostsUpdater
+        config.hostsupdater.aliases = settings['sites'].map { |site| site['map'] }
     end
 end

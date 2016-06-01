@@ -4,21 +4,21 @@ memory: 2048
 cpus: 1
 provider: virtualbox
 
-#authorize: ~/.ssh/id_rsa.pub
+authorize: ~/.ssh/id_rsa.pub
 
-#keys:
-#    - ~/.ssh/id_rsa
+keys:
+    - ~/.ssh/id_rsa
 
 folders:
-    - map: Code
+    - map: ~/Code
       to: /home/vagrant/Code
 
 sites:
-    - map: lara-vedst.app
-      to: /home/vagrant/Code/lara-vedst/public
+    - map: homestead.app
+      to: /home/vagrant/Code/Laravel/public
 
 databases:
-    - lara
+    - homestead
 
 # blackfire:
 #     - id: foo
