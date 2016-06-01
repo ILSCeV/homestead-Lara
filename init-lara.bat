@@ -1,4 +1,5 @@
 @echo off
+setlocal
 
 set homesteadRoot=%HOMEDRIVE%%HOMEPATH%\.homestead
 
@@ -14,10 +15,10 @@ IF /I "%REPO%" == "" set REPO="https://github.com/tuiSSE/lara-vedst.git"
 SET /P BRANCH=Which branch do you want to work on? [devel-poll] 
 IF /I "%BRANCH%" == "" set BRANCH="devel-poll"
 
-powershell -Command "(gc %homesteadRoot%\after.sh) -replace 'REPOSITORY_URL_HERE', '%REPO%' | Out-File %homesteadRoot%\after.sh"
-powershell -Command "(gc %homesteadRoot%\after.sh) -replace 'BRANCH_NAME_HERE', '%BRANCH%' | Out-File %homesteadRoot%\after.sh"
-
-set homesteadRoot=
+src\fart.exe --quiet %homesteadRoot%\after.sh REPOSITORY_URL_HERE %REPO%
+src\fart.exe --quiet %homesteadRoot%\after.sh BRANCH_NAME_HERE %BRANCH%
 
 SET /P EXECUTE=Do you want to execute 'vagrant up' now? [y/N] 
 IF /I "%EXECUTE%" == "Y" vagrant up
+
+endlocal
