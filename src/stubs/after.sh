@@ -44,7 +44,7 @@ php artisan key:generate
 
 echo "\n================================"
 echo "lara-vedst: webserver restart..."
-service nginx restart
+sudo service nginx restart
 
 #echo "\n================================"
 #echo "lara-vedst: OpenLDAP setup..."
