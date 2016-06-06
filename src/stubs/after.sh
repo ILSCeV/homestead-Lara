@@ -14,13 +14,27 @@ echo "lara-vedst specific provisioning"
 
 echo "lara-vedst: cloning git repo..."
 cd /home/vagrant/Code
-rm -r lara-vedst
+rm -rf lara-vedst
 git clone -b BRANCH_NAME_HERE REPOSITORY_URL_HERE
 if [ ! -d /home/vagrant/Code/lara-vedst/public ]; then
 	echo "error while executing 'git clone ...'";
 	exit 1
 fi
 cd lara-vedst
+
+echo "\n================================"
+echo "lara-vedst: git revisioninfo hooks setup..."
+hookfile="git-create-revisioninfo-hook.sh"
+if [ -f $hookfile ]; then
+	cp $hookfile .git/hooks/post-commit
+	cp $hookfile .git/hooks/post-checkout
+	cp $hookfile .git/hooks/post-merge
+	chmod +x .git/hooks/post-*
+else
+   echo "The file '$hookfile' was not found..."
+fi
+# this step is needed to trigger hook execution
+git checkout --quiet BRANCH_NAME_HERE
 
 echo "\n================================"
 echo "lara-vedst: database settings..."
