@@ -9,16 +9,20 @@ copy /-y src\stubs\Homestead.yaml "%homesteadRoot%\Homestead.yaml"
 copy /-y src\stubs\after.sh "%homesteadRoot%\after.sh"
 copy /-y src\stubs\aliases "%homesteadRoot%\aliases"
 
-SET /P REPO=Which repository do you want to work in? [https://github.com/tuiSSE/lara-vedst.git] 
-IF /I "%REPO%" == "" set REPO="https://github.com/tuiSSE/lara-vedst.git"
+set /P REPO=Which repository do you want to work in? [https://github.com/tuiSSE/lara-vedst.git] 
+if /I "%REPO%" == "" set REPO="https://github.com/tuiSSE/lara-vedst.git"
 
-SET /P BRANCH=Which branch do you want to work on? [devel-poll] 
-IF /I "%BRANCH%" == "" set BRANCH="devel-poll"
+set /P BRANCH=Which branch do you want to work on? [devel-poll] 
+if /I "%BRANCH%" == "" set BRANCH="devel-poll"
 
-src\fart.exe --quiet %homesteadRoot%\after.sh REPOSITORY_URL_HERE %REPO%
-src\fart.exe --quiet %homesteadRoot%\after.sh BRANCH_NAME_HERE %BRANCH%
+REM 'fart.exe' doesn't work with Windows 10
+REM src\fart.exe --quiet %homesteadRoot%\after.sh REPOSITORY_URL_HERE %REPO%
+REM src\fart.exe --quiet %homesteadRoot%\after.sh BRANCH_NAME_HERE %BRANCH%
 
-SET /P EXECUTE=Do you want to execute 'vagrant up' now? [y/N] 
-IF /I "%EXECUTE%" == "Y" vagrant up
+powershell -Command "(gc %homesteadRoot%\after.sh) -replace 'REPOSITORY_URL_HERE', '%REPO%' | Set-Content -Path %homesteadRoot%\after.sh"
+powershell -Command "(gc %homesteadRoot%\after.sh) -replace 'BRANCH_NAME_HERE', '%BRANCH%' | Set-Content -Path %homesteadRoot%\after.sh"
+
+set /P EXECUTE=Do you want to execute 'vagrant up' now? [y/N] 
+if /I "%EXECUTE%" == "Y" vagrant up
 
 endlocal
