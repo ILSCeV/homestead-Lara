@@ -41,7 +41,7 @@ echo "lara-vedst: database settings..."
 cp .env.example .env
 sed -i -e 's/DB_HOST=.*/DB_HOST=localhost/' .env
 sed -i -e 's/DB_DATABASE=.*/DB_DATABASE=lara/' .env
-sed -i -e 's/DB_USERNAME=.*/DB_USERNAME=root/' .env
+sed -i -e 's/DB_USERNAME=.*/DB_USERNAME=homestead/' .env
 sed -i -e 's/DB_PASSWORD=.*/DB_PASSWORD=secret/' .env
 
 echo "\n================================"
