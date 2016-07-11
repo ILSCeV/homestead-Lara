@@ -6,7 +6,7 @@ This project provides a vagrant machine for development on the [lara-vedst](http
 
 1. Install Git ([Windows](https://git-for-windows.github.io))
 2. Install [VirtualBox 5.0](https://www.virtualbox.org/wiki/Downloads)
-3. Install [Vagrant 1.8](https://www.vagrantup.com/downloads.html)
+3. Install [Vagrant 1.8.4+](https://www.vagrantup.com/downloads.html)
 4. Open a console (Powershell, Git Bash, Terminal, ...)
  1. `git clone https://github.com/ThomDietrich/homestead-lara-vedst.git`
  2. `cd homestead-lara-vedst`
@@ -14,7 +14,8 @@ This project provides a vagrant machine for development on the [lara-vedst](http
  4. `vagrant up`
 5. Your lara-vedst Source Code in folder "homestead-lara-vedst/Code"
 6. Your lara-vedst Website: [http://localhost:8000](http://localhost:8000)
-7. (Use `destroy.bat` to reset)
+7. (Use `restart-vm.bat` to restart the machine, if needed or after booting the host system)
+8. (Use `destroy.bat` to reset)
 
 ## The details
 
@@ -33,8 +34,17 @@ This project provides a vagrant machine for development on the [lara-vedst](http
      - After the execution was successful, the virtual machine is active in the background. You can connect and interact with it as with any other virtual machine, you don't have to though. 
 5. Do your modifications here, the folder is autosynced with the virtual machine
 6. **Tadaaa**
-7. The script will destroy the VM, delete the temporary files and delete your vagrant Code content. Caution: all unpushed changes to your lara-vedst repository will be lost.
+7. The script will basically just power down the VM with `vagrant halt` (if currently booted) and (re-)boot the VM with `vagrant up`.
+8. The script will destroy the VM, delete the temporary files and delete your vagrant Code content. Caution: all unpushed changes to your lara-vedst repository will be lost.
 
 
 ## Windows, Linux, OSX
 The setup was tested under Windows 7 x64 but is supposed to be platform independant.
+
+## Note on upgrades
+`homestead-lara-vedst` is based on [`homestead`](https://github.com/laravel/homestead) and the [Homestead Vagrant Box](https://atlas.hashicorp.com/laravel/boxes/homestead).
+
+Both projects are upgraded regulary and because `homestead` as well as `homestead-lara-vedst` always utilize the latest version of the Homestead Vagrant Box and additional external libraries, `homestead-lara-vedst` can behave faulty at any point.
+A merge of changes done in `homestead` will be needed!
+
+Please open an issue if you believe that an upgrade is needed.
