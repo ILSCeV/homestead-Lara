@@ -10,7 +10,7 @@ fi
 
 vagrant destroy -f
 echo "==> Deleting files and folders..."
-rm -rf "$homesteadRoot"
-rm -rf "Code/lara-vedst"
-rm -rf ".vagrant"
+rm -rfv "Code/lara-vedst"
+rm -rfv "$homesteadRoot"
+rm -rfv ".vagrant"
 
