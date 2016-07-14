@@ -8,6 +8,16 @@ cp -i src/stubs/Homestead.yaml "$homesteadRoot/Homestead.yaml"
 cp -i src/stubs/after.sh "$homesteadRoot/after.sh"
 cp -i src/stubs/aliases "$homesteadRoot/aliases"
 
-echo "Homestead initialized!"
+REPO="https://github.com/tuiSSE/lara-vedst.git"
+read -p "Which repository do you want to work in? [$REPO] " input
+REPO=${input:-$REPO}
 
-echo "AAAAH: Further steps found in init.bat needed! You may create a pull request ;)"
+BRANCH="devel-poll"
+read -p "Which branch do you want to work on? [$BRANCH] " input
+BRANCH=${input:-$BRANCH}
+
+sed -i "s/REPOSITORY_URL_HERE/$REPO/g" "$homesteadRoot/after.sh"
+sed -i "s/BRANCH_NAME_HERE/$BRANCH/g" "$homesteadRoot/after.sh"
+
+read -p "Do you want to execute 'vagrant up' now? [y/N] " input
+if [ "$input" == "y" ] vagrant up
