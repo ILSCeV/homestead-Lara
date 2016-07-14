@@ -16,8 +16,11 @@ BRANCH="devel-poll"
 read -p "Which branch do you want to work on? [$BRANCH] " input
 BRANCH=${input:-$BRANCH}
 
-sed -i "s/REPOSITORY_URL_HERE/$REPO/g" "$homesteadRoot/after.sh"
-sed -i "s/BRANCH_NAME_HERE/$BRANCH/g" "$homesteadRoot/after.sh"
+sed -i "s@REPOSITORY_URL_HERE@$REPO@g" "$homesteadRoot/after.sh"
+sed -i "s@BRANCH_NAME_HERE@$BRANCH@g" "$homesteadRoot/after.sh"
 
 read -p "Do you want to execute 'vagrant up' now? [y/N] " input
-if [ "$input" == "y" ] vagrant up
+if [ "$input" == "y" ]
+then
+	vagrant up
+fi
