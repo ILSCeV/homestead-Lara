@@ -77,5 +77,7 @@ sudo service nginx restart
 
 echo "\n================================"
 echo "lara-vedst: finished"
+echo "hack: ssh://vagrant:vagrant@localhost:2222"
+echo "code: C:\your-path-to-homestead-folder\Code\lara-vedst"
 echo "enjoy: http://localhost:8000"
 echo "================================"
