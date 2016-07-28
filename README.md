@@ -1,6 +1,8 @@
-# homestead-lara-vedst 
+# homestead-lara-vedst
 
-This project provides a vagrant machine for development on the [lara-vedst](https://github.com/4D44H/lara-vedst) calender and personnel scheduling tool.
+This project provides a vagrant machine for development on the [ILSCeV/lara-vedst](https://github.com/ILSCeV/lara-vedst) calender and personnel scheduling tool.
+
+![homestead-lara-vedst in action](screenshot.png)
 
 ## tl;dr
 
@@ -8,7 +10,7 @@ This project provides a vagrant machine for development on the [lara-vedst](http
 2. Install [VirtualBox 5.0](https://www.virtualbox.org/wiki/Downloads)
 3. Install [Vagrant 1.8.4+](https://www.vagrantup.com/downloads.html)
 4. Open a console (Powershell, Git Bash, Terminal, ...)
- 1. `git clone https://github.com/ThomDietrich/homestead-lara-vedst.git`
+ 1. `git clone https://github.com/ILSCeV/homestead-lara-vedst.git`
  2. `cd homestead-lara-vedst`
  3. `init.bat`
  4. `vagrant up`
@@ -31,7 +33,7 @@ This project provides a vagrant machine for development on the [lara-vedst](http
      - The box will be configured according to the `Homestead.yaml` in your personal folder.
      - The box will boot and at first execute a "provisioner", the script `after.sh` in your personal folder.
      - The script will download the latest lara-vest source code and will initialize the database.
-     - After the execution was successful, the virtual machine is active in the background. You can connect and interact with it as with any other virtual machine, you don't have to though. 
+     - After the execution was successful, the virtual machine is active in the background. You can connect and interact with it as with any other virtual machine, you don't have to though.
 5. Do your modifications here, the folder is autosynced with the virtual machine
 6. **Tadaaa**
 7. The script will basically just power down the VM with `vagrant halt` (if currently booted) and (re-)boot the VM with `vagrant up`.
