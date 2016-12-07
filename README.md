@@ -7,8 +7,8 @@ This project provides a vagrant machine for development on the [ILSCeV/lara-veds
 ## tl;dr
 
 1. Install Git ([Windows](https://git-for-windows.github.io))
-2. Install [VirtualBox 5.0](https://www.virtualbox.org/wiki/Downloads)
-3. Install [Vagrant 1.8.4+](https://www.vagrantup.com/downloads.html)
+2. Install [VirtualBox 5.1](https://www.virtualbox.org/wiki/Downloads)
+3. Install [Vagrant 1.9+](https://www.vagrantup.com/downloads.html)
 4. Open a console (Powershell, Git Bash, Terminal, ...)
  1. `git clone https://github.com/ILSCeV/homestead-lara-vedst.git`
  2. `cd homestead-lara-vedst`
