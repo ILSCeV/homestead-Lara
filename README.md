@@ -12,7 +12,7 @@ This project provides a vagrant machine for development on the [ILSCeV/lara-veds
 4. Open a console (Powershell, Git Bash, Terminal, ...)
  1. `git clone https://github.com/ILSCeV/homestead-lara-vedst.git`
  2. `cd homestead-lara-vedst`
- 3. `init.bat`
+ 3. `init-lara.bat` / `init-lara.sh`
  4. `vagrant up`
 5. Your lara-vedst Source Code in folder "homestead-lara-vedst/Code"
 6. Your lara-vedst Website: [http://localhost:8000](http://localhost:8000)
