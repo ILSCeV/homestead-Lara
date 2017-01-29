@@ -7,7 +7,7 @@ IF /I "%AREYOUSURE%" NEQ "Y" GOTO END
 vagrant destroy -f
 echo ==^> Deleting files and folders...
 rd /s /q ".vagrant"
-rd /s /q "Code\lara-vedst"
+rd /s /q "Code\Lara"
 rd /s /q "%HOMEDRIVE%%HOMEPATH%\.homestead"
 
 :END

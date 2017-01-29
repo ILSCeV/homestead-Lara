@@ -14,8 +14,8 @@ folders:
       to: /home/vagrant/Code
 
 sites:
-    - map: lara-vedst.app
-      to: /home/vagrant/Code/lara-vedst/public
+    - map: Lara.app
+      to: /home/vagrant/Code/Lara/public
 
 databases:
     - lara

@@ -1,6 +1,6 @@
 # homestead-lara-vedst
 
-This project provides a vagrant machine for development on the [ILSCeV/lara-vedst](https://github.com/ILSCeV/lara-vedst) calender and personnel scheduling tool.
+This project provides a vagrant machine for development on the [ILSCeV/Lara](https://github.com/ILSCeV/Lara) calender and personnel scheduling tool.
 
 ![homestead-lara-vedst in action](screenshot.png)
 
@@ -14,8 +14,8 @@ This project provides a vagrant machine for development on the [ILSCeV/lara-veds
  2. `cd homestead-lara-vedst`
  3. `init-lara.bat` / `init-lara.sh`
  4. `vagrant up`
-5. Your lara-vedst Source Code in folder "homestead-lara-vedst/Code"
-6. Your lara-vedst Website: [http://localhost:8000](http://localhost:8000)
+5. Your Lara Source Code in folder "homestead-lara-vedst/Code"
+6. Your Lara Website: [http://localhost:8000](http://localhost:8000)
 7. (Use `restart-vm.bat` to restart the machine, if needed or after booting the host system)
 8. (Use `destroy.bat` to reset)
 
@@ -37,7 +37,7 @@ This project provides a vagrant machine for development on the [ILSCeV/lara-veds
 5. Do your modifications here, the folder is autosynced with the virtual machine
 6. **Tadaaa**
 7. The script will basically just power down the VM with `vagrant halt` (if currently booted) and (re-)boot the VM with `vagrant up`.
-8. The script will destroy the VM, delete the temporary files and delete your vagrant Code content. Caution: all unpushed changes to your lara-vedst repository will be lost.
+8. The script will destroy the VM, delete the temporary files and delete your vagrant Code content. Caution: all unpushed changes to your Lara repository will be lost.
 
 
 ## Windows, Linux, OSX

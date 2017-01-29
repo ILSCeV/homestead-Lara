@@ -9,8 +9,8 @@ copy /-y src\stubs\Homestead.yaml "%homesteadRoot%\Homestead.yaml"
 copy /-y src\stubs\after.sh "%homesteadRoot%\after.sh"
 copy /-y src\stubs\aliases "%homesteadRoot%\aliases"
 
-set /P "REPO=Which repository do you want to work in? [https://github.com/ILSCeV/lara-vedst.git] "
-if /I "%REPO%" == "" set REPO="https://github.com/ILSCeV/lara-vedst.git"
+set /P "REPO=Which repository do you want to work in? [https://github.com/ILSCeV/Lara.git] "
+if /I "%REPO%" == "" set REPO="https://github.com/ILSCeV/Lara.git"
 
 set /P "BRANCH=Which branch do you want to work on? [master] "
 if /I "%BRANCH%" == "" set BRANCH="master"
