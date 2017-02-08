@@ -37,8 +37,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         config.hostsupdater.aliases = settings['sites'].map { |site| site['map'] }
     end
 
-	config.ssh.username = "vagrant"
-	config.ssh.password = "vagrant"
-
-	config.vm.boot_timeout = 300
+    config.ssh.username = "vagrant"
+    config.ssh.password = "vagrant"
+    config.vm.boot_timeout = 300
 end
