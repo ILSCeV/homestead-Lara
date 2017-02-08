@@ -10,7 +10,7 @@ This project provides a vagrant machine for development on the [ILSCeV/Lara](htt
 2. Install [VirtualBox 5.1](https://www.virtualbox.org/wiki/Downloads)
 3. Install [Vagrant 1.9+](https://www.vagrantup.com/downloads.html)
 4. Open a console (Powershell, Git Bash, Terminal, ...)
- 1. `git clone https://github.com/stefanheyder/homestead-Lara.git`
+ 1. `git clone https://github.com/ILSCeV/homestead-Lara.git`
  2. `cd homestead-Lara`
  3. `init-lara.bat` / `init-lara.sh`
  4. `vagrant up`
