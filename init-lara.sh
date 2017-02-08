@@ -12,7 +12,7 @@ REPO="https://github.com/ILSCeV/Lara.git"
 read -p "Which repository do you want to work in? [$REPO] " input
 REPO=${input:-$REPO}
 
-BRANCH="develop"
+BRANCH="master"
 read -p "Which branch do you want to work on? [$BRANCH] " input
 BRANCH=${input:-$BRANCH}
 
