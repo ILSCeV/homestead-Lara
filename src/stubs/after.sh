@@ -5,25 +5,25 @@
 # be run after the Homestead machine is provisioned.
 
 echo "\n================================"
-echo "lara-vedst specific provisioning"
+echo "Lara specific provisioning"
 
 #echo "\n================================"
-#echo "lara-vedst: Ubuntu System Update..."
+#echo "Lara: Ubuntu System Update..."
 #apt-get update
 #apt-get upgrade -y
 
-echo "lara-vedst: cloning git repo..."
+echo "Lara: cloning git repo..."
 cd /home/vagrant/Code
-rm -rf lara-vedst
+rm -rf Lara
 git clone -b BRANCH_NAME_HERE REPOSITORY_URL_HERE
-if [ ! -d /home/vagrant/Code/lara-vedst/public ]; then
+if [ ! -d /home/vagrant/Code/Lara/public ]; then
 	echo "error while executing 'git clone ...'";
 	exit 1
 fi
-cd lara-vedst
+cd Lara
 
 echo "\n================================"
-echo "lara-vedst: git revisioninfo hooks setup..."
+echo "Lara: git revisioninfo hooks setup..."
 hookfile="git-create-revisioninfo-hook.sh"
 if [ -f $hookfile ]; then
 	cp $hookfile .git/hooks/post-commit
@@ -37,7 +37,7 @@ fi
 git checkout --quiet BRANCH_NAME_HERE
 
 echo "\n================================"
-echo "lara-vedst: database settings..."
+echo "Lara: database settings..."
 cp .env.example .env
 sed -i -e 's/DB_HOST=.*/DB_HOST=localhost/' .env
 sed -i -e 's/DB_DATABASE=.*/DB_DATABASE=lara/' .env
@@ -45,39 +45,39 @@ sed -i -e 's/DB_USERNAME=.*/DB_USERNAME=homestead/' .env
 sed -i -e 's/DB_PASSWORD=.*/DB_PASSWORD=secret/' .env
 
 echo "\n================================"
-echo "lara-vedst: composer..."
+echo "Lara: composer..."
 composer install --no-progress
 #composer update
 
 echo "\n================================"
-echo "lara-vedst: seeding..."
+echo "Lara: seeding..."
 php artisan migrate --seed
 echo "\n================================"
-echo "lara-vedst: generate random cipher key..."
+echo "Lara: generate random cipher key..."
 php artisan key:generate
 
 echo "\n================================"
-echo "lara-vedst: webserver restart..."
+echo "Lara: webserver restart..."
 sudo service nginx restart
 
 #echo "\n================================"
-#echo "lara-vedst: OpenLDAP setup..."
+#echo "Lara: OpenLDAP setup..."
 #apt-get install -y slapd ldap-utils
 #dpkg-reconfigure slapd
 #apt-get install phpldapadmin
 #echo "\n================================"
-#echo "lara-vedst: ApacheDS setup..."
+#echo "Lara: ApacheDS setup..."
 #wget http://mirror.yannic-bonenberger.com/apache//directory/apacheds/dist/2.0.0-M21/apacheds-2.0.0-M21-amd64.deb
 #dpkg -i apacheds-*-amd64.deb
 #echo "\n================================"
-#echo "lara-vedst: phpmyadmin..."
+#echo "Lara: phpmyadmin..."
 #add-apt-repository -y ppa:nijel/phpmyadmin
 #apt-get update
 #apt-get install phpmyadmin
 
 echo "\n================================"
-echo "lara-vedst: finished"
+echo "Lara: finished"
 echo "hack: ssh://vagrant:vagrant@localhost:2222"
-echo "code: C:\your-path-to-homestead-folder\Code\lara-vedst"
+echo "code: C:\your-path-to-homestead-folder\Code\Lara"
 echo "enjoy: http://localhost:8000"
 echo "================================"

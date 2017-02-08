@@ -8,7 +8,7 @@ cp -i src/stubs/Homestead.yaml "$homesteadRoot/Homestead.yaml"
 cp -i src/stubs/after.sh "$homesteadRoot/after.sh"
 cp -i src/stubs/aliases "$homesteadRoot/aliases"
 
-REPO="https://github.com/ILSCeV/lara-vedst.git"
+REPO="https://github.com/ILSCeV/Lara.git"
 read -p "Which repository do you want to work in? [$REPO] " input
 REPO=${input:-$REPO}
 
