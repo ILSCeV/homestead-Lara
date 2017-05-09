@@ -50,6 +50,12 @@ composer install --no-progress
 #composer update
 
 echo "\n================================"
+echo "Lara: installing npm dependencies (this could take some time)"
+npm install
+echo "Lara building typescript and javascript dependencies"
+npm run dev
+
+echo "\n================================"
 echo "Lara: seeding..."
 php artisan migrate --seed
 echo "\n================================"
