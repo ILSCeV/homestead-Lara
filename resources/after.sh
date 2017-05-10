@@ -15,9 +15,9 @@ echo "Lara specific provisioning"
 echo "Lara: cloning git repo..."
 cd /home/vagrant/Code
 rm -rf Lara
-git clone -b BRANCH_NAME_HERE REPOSITORY_URL_HERE
+git clone --branch BRANCH_NAME_HERE REPOSITORY_URL_HERE
 if [ ! -d /home/vagrant/Code/Lara/public ]; then
-	echo "error while executing 'git clone ...'";
+	echo "Error while executing 'git clone ...'"
 	exit 1
 fi
 cd Lara

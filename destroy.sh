@@ -10,7 +10,8 @@ fi
 
 vagrant destroy -f
 echo "==> Deleting files and folders..."
-rm -rfv "Code/Lara"
-rm -rfv "$homesteadRoot"
 rm -rfv ".vagrant"
-
+rm -rfv "Code/Lara"
+rm -rfv "Homestead.yaml"
+rm -rfv "after.sh"
+rm -rfv "aliases"
