@@ -4,5 +4,6 @@ phpunit.xml
 /Homestead.yaml
 /Homestead.json
 /after.sh
+/after.sh.bak
 /aliases
 /Code/Lara
