@@ -9,8 +9,8 @@ read -p "Which repository do you want to work in? [$REPO] " input
 REPO=${input:-$REPO}
 
 echo ""
-echo "List of available remote branches (ignore 'refs/heads/'):"
-git ls-remote --heads "$REPO"
+echo "List of available remote branches:"
+git ls-remote --heads "$REPO" | sed "s/.*refs\/heads\///g" | column
 echo ""
 
 BRANCH="master"
