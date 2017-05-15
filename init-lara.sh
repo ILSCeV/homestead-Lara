@@ -16,7 +16,6 @@ echo ""
 BRANCH="master"
 read -p "Which branch do you want to work on? [$BRANCH] " input
 BRANCH=${input:-$BRANCH}
-BRANCH="${BRANCH#refs/heads/}"
 
 sed -i'.bak' -e "s@REPOSITORY_URL_HERE@$REPO@g" after.sh
 sed -i'.bak' -e "s@BRANCH_NAME_HERE@$BRANCH@g" after.sh
