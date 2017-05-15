@@ -10,7 +10,7 @@ REPO=${input:-$REPO}
 
 echo ""
 echo "List of available remote branches:"
-git ls-remote --heads "$REPO" | sed "s/.*refs\/heads\///g" | column
+git ls-remote --heads "$REPO" | sed "s@.*refs/heads/@@g" | column
 echo ""
 
 BRANCH="master"
