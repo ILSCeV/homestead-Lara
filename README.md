@@ -9,14 +9,14 @@ This project provides a vagrant machine for development on the [ILSCeV/Lara](htt
 1. Install Git ([Windows](https://git-for-windows.github.io))
 2. Install [VirtualBox 5.1](https://www.virtualbox.org/wiki/Downloads)
 3. Install [Vagrant 1.9+](https://www.vagrantup.com/downloads.html)
-4. Open a console (Powershell, Git Bash, Terminal, ...). If you are on Windows, be sure to start the console with elevated rights (as Administrator).
- 1. `git clone https://github.com/ILSCeV/homestead-Lara.git`
- 2. `cd homestead-Lara`
- 3. `init-lara.bat` / `init-lara.sh`
- 4. `vagrant up`
-5. Your Lara Source Code in folder "homestead-Lara/Code"
+4. Open a console (e.g., Git Bash on Windows, Terminal on Linux). On Windows: start console with elevated rights (as Administrator)
+    1. `git clone https://github.com/ILSCeV/homestead-Lara.git`
+    2. `cd homestead-Lara`
+    3. `init-lara.bat` (Window) / `./init-lara.sh` (Linux/Mac)
+    4. `vagrant up`
+5. Your Lara Source Code: "homestead-Lara/Code"
 6. Your Lara Website: [http://localhost:8000](http://localhost:8000)
-7. (Use `restart-vm.bat` to restart the machine, if needed or after booting the host system)
+7. (Use `restart-vm.bat` to restart the machine if needed or after booting the host system)
 8. (Use `destroy.bat` to reset)
 
 ## How to rebuild javascript/typescript libraries after your changes
