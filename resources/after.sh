@@ -82,6 +82,8 @@ sudo service nginx restart
 #apt-get update
 #apt-get install phpmyadmin
 
+echo "cd /home/vagrant/Code/Lara" >> /home/vagrant/.bashrc
+
 echo "\n================================"
 echo "Lara: finished"
 echo "hack: ssh://vagrant:vagrant@localhost:2222"
